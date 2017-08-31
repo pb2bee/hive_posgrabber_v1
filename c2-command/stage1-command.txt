@@ -1,1 +1,3 @@
 #Write down each commands as follows (there could be '$' or not at the fist character)
+$test
+$test2
