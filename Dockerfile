@@ -1,10 +1,13 @@
-FROM nginx
+FROM ubuntu:16.04
 
 RUN apt-get update \
-  && apt-get install -y php-fpm \
-  && php -v \
-  && php-fpm7.0 -v
+  && apt-get install -y nginx \
+  && apt-get install -y php-fpm
 
-COPY nginx /etc/nginx/
+COPY nginx etc/nginx
 COPY html /var/www/html
 COPY php/7.0 /etc/php/7.0
+
+CMD /etc/init.d/nginx start \
+  && /etc/init.d/php7.0-fpm start \
+  && /bin/bash
