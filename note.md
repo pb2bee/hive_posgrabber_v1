@@ -1,3 +1,12 @@
-sudo docker run -v /c2-command:/home/analysis/tools/c2-command -it --rm --name app-test -d -p 80:80 app
+# Build docker image
+$ sudo docker build [name] .
 
-sudo docker pull pb2bee/mal-posgrabber:1
+# Pulling the docker images
+$ sudo docker pull pb2bee/mal-posgrabber:1
+
+
+# Create a container
+$ sudo docker run --rm -i -t -v [c2-command path in host]:/home/analysis/tools/c2-command --name [container's name] -d pb2bee/mal-posgrabber:1
+
+
+
